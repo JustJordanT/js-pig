@@ -1,0 +1,7 @@
+{
+  "name": "js-pig",
+  "version": "1.0.0",
+  "dependencies": {
+    "js-confetti": "^0.11.0"
+  }
+}

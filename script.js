@@ -1,4 +1,7 @@
-'use strict';
+// 'use strict';
+
+// import JSConfetti from 'js-confetti'
+
 
 // Selecting elements
 const score0El = document.querySelector('#score--0')
@@ -54,6 +57,7 @@ btnRoll.addEventListener('click', function() {
     }
 })
 
+const jsConfetti = new JSConfetti();
 
 btnHold.addEventListener('click', function () {
     scores[activePlayer] += currentScore
@@ -70,6 +74,22 @@ btnHold.addEventListener('click', function () {
         if (scores[activePlayer] >= 100) {
             document.querySelector(`
             .player--${activePlayer}`).classList.add('player--winner')
+
+            // jsConfetti.addConfetti()
+            jsConfetti.addConfetti({
+                // emojis: ["🎉", "🥳", "👏", "⚡", "🎈"],
+                // emojiSize: 100,
+                confettiNumber: 300,
+                confettiColors: [
+                    "#ff0a54",
+                    "#ffe94c",
+                    "#ff7096",
+                    "#1fffff",
+                    "#e37b12",
+                    "#ffffff",
+                ],
+            });
+
             // document.querySelector(`.player--${activePlayer}`)
             //     .classList.remove('player--active');
             btnRoll.classList.toggle('hidden')
@@ -125,3 +145,6 @@ document.addEventListener('keydown', function (e) {
         closeModal();
     }
 });
+
+
+

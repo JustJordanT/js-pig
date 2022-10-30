@@ -1,0 +1,18 @@
+{
+  "name": "js-pig",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "dependencies": {
+    "js-confetti": "^0.11.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.7.0",
+    "parcel-plugin-static-files-copy": "^2.6.0"
+  },
+  "staticFiles": {
+    "staticPath": "public"
+  }
+}

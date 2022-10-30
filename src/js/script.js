@@ -1,5 +1,4 @@
 // 'use strict';
-
 // import JSConfetti from 'js-confetti'
 
 
@@ -45,7 +44,8 @@ btnRoll.addEventListener('click', function() {
 
     // Display the dice
     diceEl.classList.remove('hidden')
-    diceEl.src = `dice-${diceRoll}.png`
+    diceEl.src = `../static/dice-${diceRoll}.png`
+        // /Users/jordantaylor/Desktop/Development/teach-your-self-cs/projects/js-pig/assests
 
     if (diceRoll !== 1){
         // add to current score
@@ -58,6 +58,12 @@ btnRoll.addEventListener('click', function() {
 })
 
 const jsConfetti = new JSConfetti();
+
+PlaySound = function (sound) {
+    let audio = new Audio(sound);
+    audio.loop = false;
+    audio.play();
+}
 
 btnHold.addEventListener('click', function () {
     scores[activePlayer] += currentScore
@@ -74,6 +80,7 @@ btnHold.addEventListener('click', function () {
         if (scores[activePlayer] >= 100) {
             document.querySelector(`
             .player--${activePlayer}`).classList.add('player--winner')
+            PlaySound('yay.mp3')
 
             // jsConfetti.addConfetti()
             jsConfetti.addConfetti({

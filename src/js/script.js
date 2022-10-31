@@ -153,5 +153,11 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
+module.exports = btnCloseModal;
+module.exports = btnsOpenModal;
+module.exports = btnNew;
+module.exports = btnRoll;
+module.exports = btnHold;
+
 
 
